@@ -1,4 +1,9 @@
 def pagure_url(path=None, remote=None, commit=None, line1=None, line2=None, **kwargs):
+    if not is_pagure(remote):
+        # It is very strange to return an empty string, I would expect
+        # returning the URL unchanged, but this is how the other plugins do it
+        return ""
+
     url = "{remote}/{type}/{commit}/f/{path}"
     if line1 and line1 != "0":
         url += "#_{line1}"
@@ -12,6 +17,11 @@ def pagure_url(path=None, remote=None, commit=None, line1=None, line2=None, **kw
         path=path,
         line1=line1,
         line2=line2)
+
+
+def is_pagure(remote):
+    domains = ["pagure.io", "src.fedoraproject.org"]
+    return any(d in remote for d in domains)
 
 
 def remote2http(remote):
