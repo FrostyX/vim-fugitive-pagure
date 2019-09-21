@@ -24,8 +24,8 @@ function! s:pagure_url(opts, ...)
 endfunction
 
 
-if !exists('g:fugitive_pagure_handlers')
-    let g:fugitive_pagure_handlers = []
+if !exists('g:fugitive_browse_handlers')
+    let g:fugitive_browse_handlers = []
 endif
 
 call insert(g:fugitive_browse_handlers, s:function("s:pagure_url"))
