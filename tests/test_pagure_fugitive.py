@@ -15,6 +15,9 @@ class TestFugitivePagure(unittest.TestCase):
         assert remote2http("ssh://git@pagure.io/copr/copr.git") \
                         == "https://pagure.io/copr/copr"
 
+        assert remote2http("https://pagure.io/copr/copr.git") \
+                        == "https://pagure.io/copr/copr"
+
     def test_pagure_url(self):
         opts = {
             "path": "frontend/coprs_frontend/manage.py",

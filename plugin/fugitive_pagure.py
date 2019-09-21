@@ -26,9 +26,9 @@ def is_pagure(remote):
 
 def remote2http(remote):
     url = remote
+    url = url.rsplit(".git")[0]
     if remote.startswith("ssh://"):
         url = url.split("@", 1)[1]
-        url = url.rsplit(".git")[0]
         url = "https://" + url
     return url
 
