@@ -13,7 +13,7 @@ First, don't forget to install [tpope/vim-fugitive][vim-fugitive] to provide `:G
 command (and many more), and than `FrostyX/fugitive-pagure-vim` to provide [pagure][pagure] support.
 
     Plugin 'tpope/vim-fugitive'
-    Plugin 'FrostyX/fugitive-pagure-vim'  " Enable :Gbrowse for pagure.io
+    Plugin 'FrostyX/vim-fugitive-pagure'  " Enable :Gbrowse for pagure.io
 
 
 ## `:Gbrowse` in action
