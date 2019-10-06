@@ -23,9 +23,15 @@ def is_pagure(remote):
     domains = ["pagure.io", "src.fedoraproject.org"]
     return any(d in remote for d in domains)
 
+def is_fork(remote):
+    token = remote.rsplit("/")[3]
+    return (token == 'forks')
 
 def remote2http(remote):
-    url = remote
+    if is_fork(remote):
+        url = remote.replace('forks', 'fork')
+    else:
+        url = remote
     url = url.rsplit(".git")[0]
     if remote.startswith("ssh://"):
         url = url.split("@", 1)[1]
