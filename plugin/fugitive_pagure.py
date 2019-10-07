@@ -30,7 +30,7 @@ def is_fork(remote):
 def remote2http(remote):
     url = remote
     if is_fork(remote):
-        url = remote.replace('forks', 'fork')
+        url = remote.replace('/forks/', '/fork/', 1)
     url = url.rsplit(".git")[0]
     if remote.startswith("ssh://"):
         url = url.split("@", 1)[1]
