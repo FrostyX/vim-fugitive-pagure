@@ -40,3 +40,7 @@ class TestFugitivePagure(unittest.TestCase):
         opts["line2"] = 14
         expected = "https://pagure.io/copr/copr/blob/master/f/frontend/coprs_frontend/manage.py#_12-14"
         assert pagure_url(**opts) == expected
+
+        opts["path"] = "README.md"
+        expected = "https://pagure.io/copr/copr/blob/master/f/README.md?text=True#_12-14"
+        assert pagure_url(**opts) == expected

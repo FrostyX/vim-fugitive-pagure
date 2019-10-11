@@ -5,6 +5,8 @@ def pagure_url(path=None, remote=None, commit=None, line1=None, line2=None, **kw
         return ""
 
     url = "{remote}/{type}/{commit}/f/{path}"
+    if is_markup(path):
+        url += "?text=True"
     if line1 and line1 != "0":
         url += "#_{line1}"
     if line2 and line2 != "0" and line2 != line1:
@@ -26,6 +28,10 @@ def is_pagure(remote):
 def is_fork(remote):
     token = remote.rsplit("/")[3]
     return (token == 'forks')
+
+def is_markup(path):
+    ext = path[path.rfind("."):]
+    return ext in (".rst", ".mk", ".md", ".markdown")
 
 def remote2http(remote):
     url = remote
