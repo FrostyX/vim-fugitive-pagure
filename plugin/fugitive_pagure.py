@@ -25,13 +25,16 @@ def is_pagure(remote):
     domains = ["pagure.io", "src.fedoraproject.org"]
     return any(d in remote for d in domains)
 
+
 def is_fork(remote):
     token = remote.rsplit("/")[3]
     return (token == 'forks')
 
+
 def is_markup(path):
     ext = path[path.rfind("."):]
     return ext in (".rst", ".mk", ".md", ".markdown")
+
 
 def remote2http(remote):
     url = remote
