@@ -1,5 +1,5 @@
 Name: vim-fugitive-pagure
-Version: 1.1
+Version: 1.2
 Release: 1%{?dist}
 Summary: Pagure support for vim-fugitive plugin
 License: GPLv2+
@@ -47,6 +47,9 @@ python3 -B -m pytest . -v -s
 
 
 %changelog
+* Wed Mar 25 2020 Jakub Kadlcik <frostyx@email.cz> 1.2-1
+- Oops, fix the copy-pasted Source0 (frostyx@email.cz)
+
 * Tue Mar 24 2020 Jakub Kadlcik <frostyx@email.cz> 1.1-1
 - new package built with tito
 
