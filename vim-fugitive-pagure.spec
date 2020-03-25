@@ -11,7 +11,7 @@ URL: https://github.com/FrostyX/vim-fugitive-pagure
 # git clone https://github.com/FrostyX/vim-fugitive-pagure.git
 # cd vim-fugitive-pagure
 # tito build --tgz
-Source0: https://github.com/tpope/vim-fugitive/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0: %{name}-%{version}.tar.gz
 
 Requires: vim-common
 Requires: vim-fugitive
