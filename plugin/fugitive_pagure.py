@@ -4,13 +4,19 @@ def pagure_url(path=None, remote=None, commit=None, line1=None, line2=None, **kw
         # returning the URL unchanged, but this is how the other plugins do it
         return ""
 
-    url = "{remote}/{type}/{commit}/f/{path}"
-    if is_markup(path):
-        url += "?text=True"
-    if line1 and line1 != "0":
-        url += "#_{line1}"
-    if line2 and line2 != "0" and line2 != line1:
-        url += "-{line2}"
+    # Special case for generating commit URLs instead of file URLs, e.g.
+    # :Gbrowse 460eae630
+    if kwargs["type"] == "commit":
+        url = "{remote}/c/{commit}"
+
+    else:
+        url = "{remote}/{type}/{commit}/f/{path}"
+        if is_markup(path):
+            url += "?text=True"
+        if line1 and line1 != "0":
+            url += "#_{line1}"
+        if line2 and line2 != "0" and line2 != line1:
+            url += "-{line2}"
 
     return url.format(
         remote=remote2http(remote),

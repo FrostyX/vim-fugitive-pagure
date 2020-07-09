@@ -44,3 +44,13 @@ class TestFugitivePagure(unittest.TestCase):
         opts["path"] = "README.md"
         expected = "https://pagure.io/copr/copr/blob/master/f/README.md?text=True#_12-14"
         assert pagure_url(**opts) == expected
+
+    def test_pagure_commit_url(self):
+        opts = {
+            "path": None,
+            "remote": "ssh://git@pagure.io/copr/copr.git",
+            "type": "commit",
+            "commit": "somelongcommithash",
+        }
+        expected = "https://pagure.io/copr/copr/c/somelongcommithash"
+        assert pagure_url(**opts) == expected
