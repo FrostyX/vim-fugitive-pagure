@@ -1,5 +1,5 @@
 Name: vim-fugitive-pagure
-Version: 1.3
+Version: 1.4
 Release: 1%{?dist}
 Summary: Pagure support for vim-fugitive plugin
 License: GPLv2+
@@ -47,6 +47,9 @@ python3 -B -m pytest . -v -s
 
 
 %changelog
+* Tue Jul 28 2020 Jakub Kadlcik <frostyx@email.cz> 1.4-1
+- Recognize pkgs.fedoraproject.org as a pagure URL (frostyx@email.cz)
+
 * Thu Jul 09 2020 Jakub Kadlcik <frostyx@email.cz> 1.3-1
 - Implement support for browsing commits (frostyx@email.cz)
 
