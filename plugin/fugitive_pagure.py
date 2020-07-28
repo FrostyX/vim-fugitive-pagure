@@ -28,7 +28,11 @@ def pagure_url(path=None, remote=None, commit=None, line1=None, line2=None, **kw
 
 
 def is_pagure(remote):
-    domains = ["pagure.io", "src.fedoraproject.org"]
+    domains = [
+        "pagure.io",
+        "src.fedoraproject.org",
+        "pkgs.fedoraproject.org",
+    ]
     return any(d in remote for d in domains)
 
 
