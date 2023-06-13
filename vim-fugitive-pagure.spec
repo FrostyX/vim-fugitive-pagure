@@ -2,7 +2,7 @@ Name: vim-fugitive-pagure
 Version: 1.4
 Release: 1%{?dist}
 Summary: Pagure support for vim-fugitive plugin
-License: GPLv2+
+License: GPL-2.0-or-later
 BuildArch: noarch
 
 URL: https://github.com/FrostyX/vim-fugitive-pagure
